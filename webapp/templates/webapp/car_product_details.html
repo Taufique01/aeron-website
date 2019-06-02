@@ -1,0 +1,76 @@
+{% extends 'webapp/base.html' %}
+{% load static %}
+
+
+{% block title %}
+
+car perfumes-areon
+
+{% endblock %}
+
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/style_hp.css' %}" />
+<link rel="stylesheet" href="{% static 'css/modal.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+{% include 'webapp/car_top.html' %}
+
+<div class="midle-HP">
+    <div class="title-p-middle-hp"><span>VŮNĚ PRO AUTA | </span>
+        <a href="{% url 'carperfume_cata' %}">AREON CAR PERFUME</a>
+    </div>
+
+    <div class="modal-content">
+
+
+
+        <div class="modal-main-div">
+            <div class="mm1">
+                <img id="image" src="{{ p.image.url }}" alt="image">
+
+                <!--  <p class="catagory-hp">{{ p.catagory|upper }}</p>
+                <p class="title-hp">{{ p.title|upper }}</p>
+                <P class="quan-hp">{{ p.quantity1 }} &nbsp;&nbsp;&nbsp;&nbsp;{{ p.quantity2 }} &nbsp;&nbsp;&nbsp;&nbsp;{{ p.quantity3 }} </P>-->
+            </div>
+
+            <div class="mm2">
+                <p class="txt1">{{ p.head_txt1 }}</p>
+                <p class="txt2">{{ p.head_txt2 }}</p>
+                <p class="txt3">{{ p.description_txt3 }}</p>
+            </div>
+
+        </div>
+
+        <div class="navi-button">
+            <button class="previous">PŘEDCHOZÍ&#10094; </button>
+            <button class="next"> &#10095;NÁSLEDUJÍCÍ</button>
+        </div>
+
+        <div id="imgPopup" class="img-popup">
+
+            <!-- Modal content -->
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <img id="popup-image" class="center" src="{{ p.image.url }}" alt="IMAGE">
+            </div>
+
+        </div>
+        <input type="hidden" id="url-details" data-murl="{{ MEDIA_URL }}/media/123" data-url="{% url 'carproducts_details'   pk=p.prefume_catagory.id  id=123 %}" value="{{ p.id }}" />
+
+
+        {% csrf_token %}
+
+    </div>
+
+
+
+</div>
+
+{% endblock %}
+{% block js %}
+<script src="{% static 'js/function_js.js' %}"></script>
+
+{% endblock %}

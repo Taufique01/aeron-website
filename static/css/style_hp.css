@@ -1,0 +1,61 @@
+/*Display 3 per row for medium displays (like mobile phones in landscape or smaller tablets)*/
+
+
+
+
+
+
+.middle-hp img {
+
+    width: 50%;
+    height: auto;
+    margin: auto;
+    background-color: white;
+    #border: 1px solid blue;
+}
+
+.title-hp {
+
+    font-weight: 600;
+
+}
+
+.quan-hp {
+
+    font-size: 9px;
+
+}
+
+
+@media screen and (min-width: 28.75em) {
+
+
+
+    .middle-hp img {
+        width: 60%;
+        height: auto;
+        margin: auto;
+    }
+
+
+
+
+}
+
+/*Display 6 to a row for large displays (like medium tablets and up) */
+@media screen and (min-width: 40.5em) {
+
+
+    /*Display 3 per row for medium displays (like mobile phones in landscape or smaller tablets)*/
+
+
+    .middle-hp img {
+
+        width: 70%;
+
+        height: auto;
+        margin-left: 25px;
+    }
+
+
+}

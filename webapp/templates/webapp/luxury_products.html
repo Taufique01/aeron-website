@@ -1,0 +1,53 @@
+{% extends 'webapp/base.html' %}
+{% load static %}
+
+
+{% block title %}
+
+luxury car perfumes-areon
+
+{% endblock %}
+
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/style_hp.css' %}" />
+<link rel="stylesheet" href="{% static 'css/modal.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+{% include 'webapp/luxury_top.html' %}
+
+<div id="product" class="midle-HP">
+    <div class="title-p-middle-hp"><span> LUXUSNÍ VŮNĚ PRO AUTA | </span>
+        <a href="{% url 'luxurycarperfume_cata' %}">AREON LUXURY CAR PERFUME</a>
+    </div>
+
+    {% for p in products %}
+
+        <div class="middle-hp js-car-products">
+             <a style="text-decoration:none;display:block" href="{% url 'luxurycarproducts_details'   pk=p.prefume_catagory.id id=p.id %}">
+
+            <img src="{{ p.image.url }}" alt="image">
+            <p class="catagory-hp">{{ p.catagory|upper }}</p>
+            <p class="title-hp">{{ p.title|upper }}</p>
+            <P class="quan-hp">{{ p.quantity1 }} &nbsp;&nbsp;&nbsp;&nbsp;{{ p.quantity2 }} &nbsp;&nbsp;&nbsp;&nbsp;{{ p.quantity3 }} </P>
+
+        </a>
+
+
+        </div>
+
+
+    {% endfor %}
+
+</div>
+
+
+
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/js.js' %}"></script>
+
+{% endblock %}

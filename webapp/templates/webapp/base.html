@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% block title %}home-areon{% endblock %}</title>
+
+
+    <meta name="description" content="Areon perfume">
+    <meta name="keywords" content="areon, areon home perfume, luxury car perfume, car perfume ,areon premium">
+    <meta name="author" content="areon">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style_hp2.css' %}" />
+    {% block stylesheet %}
+
+
+    {% endblock %}
+</head>
+
+<body onresize="reSized()" class="body-style-1">
+    <button onclick="showMenu()" id="menu-icon"></button>
+
+
+    <div class="nav">
+
+        <a href="{% url 'index'   %}" style="display:block"><img class="img-logo" src="{% static 'photos/logo.png' %}" alt="LOGO"></a>
+        <div class="nav-bg2"></div>
+
+        <ul class="nav-items-ul">
+            <button onclick="hideMenu()" id="close-icon"></button>
+            <!--<li><a href="{% url 'index' %}">Uvodem</a></li>-->
+            <li><a href="{% url 'carperfume_cata' %}">VŮNĚ PRO AUTA</a></li>
+            <li><a href="{% url 'luxurycarperfume_cata' %}">LUXUSNÍ VŮNĚ PRO AUTA</a></li>
+            <li><a href="{% url 'homeperfume_cata' %}">VŮNĚ PRO DOMOV A KANCELÁŘ</a></li>
+            <li><a href="{% url 'contact' %}">KDE KOUPIT</a></li>
+        </ul>
+    </div>
+
+    <div class="nav-bg">
+
+
+    </div>
+
+
+
+
+    {% block content %}
+
+
+    {% endblock %}
+
+
+
+    <div class="middle-content-bg">
+        <img src="{% static  'photos/mid-bg.png' %}" alt="image">
+
+
+    </div>
+
+    <ul class="middle-content">
+
+        <li><a href="{% url 'carperfume_cata' %}">
+                <p id="link-car">Vůně<br><b>pro auta</b> </p>
+                <img src="{% static 'photos/car.png' %}" alt="IMAGE">
+            </a></li>
+        <li><a href="{% url 'luxurycarperfume_cata' %}">
+                <p id="link-luxury-car">Luxusní vůně <br><b>pro auta</b> </p>
+                <img src="{% static 'photos/luxury_car.png' %}" alt="IMAGE">
+            </a></li>
+        <li><a href="{% url 'homeperfume_cata' %}">
+                <p id="link-home">Vůně pro<br><b>domov a kancelář</b> </p>
+                <img src="{% static 'photos/home.png' %}" alt="IMAGE">
+            </a></li>
+    </ul>
+    <div class="line"></div>
+    <div class="footer">
+
+        <div class="footer-icon">
+
+            <ul class="footer-icons-list">
+                <li><a href=""><img src="{% static 'photos/fb.png' %}" alt="FB"></a></li>
+                <li><a href=""><img src="{% static 'photos/youtube.png' %}" alt="Youtube"></a></li>
+                <li><a href=""><img src="{% static 'photos/instagram.png' %}" alt="Instagram"></a></li>
+
+
+            </ul>
+
+        </div>
+
+
+
+
+        <div class="footer-text">
+
+
+
+            <p>
+                <b>KONTAKT</b><br>
+                Aroma WORLD CZ s.r.o.<br>
+                Suchardova 1687/1, 702 00 Ostrava<br><br>
+
+               Telefon: +420 734 488 584<br>
+               Email: obchod@vune-areon.cz
+
+            </p>
+
+
+        </div>
+
+
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+     {% block js %}
+
+
+    {% endblock %}
+
+
+
+</body>
+
+</html>

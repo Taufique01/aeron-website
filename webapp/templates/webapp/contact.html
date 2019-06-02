@@ -1,0 +1,115 @@
+{% extends 'webapp/base.html' %}
+{% load static %}
+{% load listutil %}
+
+
+{% block title %}
+
+contact-areon
+
+{% endblock %}
+
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/style_hp.css' %}" />
+<link rel="stylesheet" href="{% static 'css/modal2.css' %}" />
+<link rel="stylesheet" href="{% static 'css/gmap.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<div class="top-parent">
+    <img class="img-bg" src="{% static 'photos/contact_theme.png' %}">
+
+    <div class="top-content">
+
+
+        <img class="img-logo2" src="{% static 'photos/contact_logo.png' %}" alt="KDE KOUPIT">
+        <p class="home-text">
+            Dopřejte svým smyslům elegantní vůni a udělejte z jízdy vaším autem nezapomenutelný zážitek. Podmanivé aroma, stylový design a jednoduché použití osvěžovačů vzduchu Areon vás bude bavit. Vyberte si z široké palety unikátních vůní tu svou a hoďte všechny starosti za hlavu. Výrobky Areon patří mezi nejkvalitnější osvěžovače vzduchu a spokojeni s nimi budou i ti nejnáročnější klienti.
+        </p>
+
+
+
+
+    </div>
+
+
+
+
+
+
+</div>
+<div class="midle-HP">
+    <div class="title-p-middle-hp"><span> KDE KOUPIT | </span>
+        <a href="{% url 'carperfume_cata' %}">AREON PREMIUM</a>
+    </div>
+
+    <p class="t1">KDE NÁS NALEZNETE</p>
+    <p class="t2">PŘEHLED MÍST</p>
+    <div class="modal-main-div">
+        <div class="mm1">
+
+            {% for c in contacts|rows:"2"|first %}
+
+
+            <div>
+                <a href="http://{{c.url}}" target="_blank" style="text-decoration:none;display:block">
+                    <p class="txt2">{{c.title}}</p>
+                    <p class="txt1">{{c.url}}</p>
+                </a>
+
+            </div>
+
+            {% endfor %}
+
+
+        </div>
+        <div class="mm2">
+
+
+            {% for c in contacts|rows:"2"|last %}
+
+
+            <div>
+                <a href="http://{{c.url}}" target="_blank" style="text-decoration:none;display:block">
+                    <p class="txt2">{{c.title}}</p>
+                    <p class="txt1">{{c.url}}</p>
+                </a>
+
+            </div>
+
+            {% endfor %}
+
+
+        </div>
+
+    </div>
+    <div id="map"></div>
+
+    <input type="hidden" id="url-map" data-murl="{% url 'getpositions' %}" />
+    {% csrf_token %}
+
+
+
+
+</div>
+
+
+
+{% endblock %}
+
+{% block js %}
+
+<script src="{% static 'js/js.js' %}"></script>
+
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+
+
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgAmR7-_DdTpmCpDONu9nZkUyeL7EaURI&callback=initMap">
+</script>
+<script src="{% static 'js/gmap.js' %}"></script>
+
+
+
+{% endblock %}

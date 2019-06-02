@@ -1,0 +1,44 @@
+{% extends 'webapp/base.html' %}
+{% load static %}
+
+{% block title %}
+
+home perfumes-areon
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+{% include 'webapp/home_top.html' %}
+
+<div class="midle-HP">
+    <div class="title-p-middle-hp"><span> VŮNĚ PRO DOMOV A KANCELÁŘ | </span>
+        <a href="{% url 'homeperfume_cata' %}">AREON HOME PERFUME</a>
+    </div>
+    <div>
+
+        {% for c in cat %}
+        <div class="middle-hp js-car-cata">
+            <a style="display: block; text-decoration: none" href="{% url 'homeproducts' pk=c.id %}">
+                <img src="{{ c.image.url  }}" alt="image">
+                <p class="catagory-hp">{{c.title}}</p>
+            </a>
+        </div>
+        {% endfor %}
+
+    </div>
+
+
+
+</div>
+
+
+{% endblock %}
+{% block js %}
+<script src="{% static 'js/js.js' %}"></script>
+
+{% endblock %}
+
