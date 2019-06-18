@@ -1,6 +1,27 @@
  /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
  #map {
-     height: 650px;
-     border: 1px solid blue;
+     height: 350px;
+     margin-right: 20px;
+     #border: 1px solid blue;
+ }
+
+ @media screen and (min-width: 28.75em) {
+
+     #map {
+         height: 500px;
+         margin-right: 35px;
+     }
+ }
+
+ @media screen and (min-width: 40.5em) {
+
+     #map {
+
+         height: 700px;
+
+         margin-right: 50px;
+     }
+
+
  }

@@ -4,8 +4,8 @@ from django.db.models.fields.related import ManyToManyField
 from .models import Position
 
 class PositionSerializer(serializers.ModelSerializer):
-   
+
     class Meta:
         model = Position
-        fields = ('lat', 'lng')
+        fields = ('lat', 'lng','info')
 

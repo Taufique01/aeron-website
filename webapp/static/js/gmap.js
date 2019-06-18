@@ -33,7 +33,7 @@ var csrftoken = getCookie('csrftoken');
 
 
 
-var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+//var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 
 
@@ -55,23 +55,34 @@ function initMap() {
         },
         success: function (data) {
 
+              var infoWin = new google.maps.InfoWindow();
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 3,
+                zoom: 7,
                 center: {
-                    lat: -28.024,
-                    lng: 140.887
+                    lat:  49.607098,
+                    lng: 15.579466
                 }
             });
 
             var dat = JSON.parse(JSON.stringify(data.positions));
             var markers = dat.map(function (data, i) {
-                return new google.maps.Marker({
+                var marker= new google.maps.Marker({
                     position: {
                         lat: Number(data.lat),
                         lng: Number(data.lng)
-                    },
-                    label: labels[i % labels.length]
+                    }
+                    //label: labels[i % labels.length]
                 });
+
+                google.maps.event.addListener(marker, 'click', function(evt) {
+
+
+                 infoWin.setContent(data.info);
+                  infoWin.open(map, marker);
+                  });
+              return marker;
+
+
             });
             var markerCluster = new MarkerClusterer(map, markers, {
                 imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'

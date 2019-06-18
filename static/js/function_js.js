@@ -252,7 +252,7 @@ function updateUI(p) {
     var imgurl = medurl.replace("123", p.image);
     $("#url-details").attr('value', INDEX);
     $("#image").attr("src", imgurl);
-    $("#popup-inage").attr("src", imgurl);
+    $("#popup-image").attr("src", imgurl);
     // $(".catagory-hp").text(p.catagory);
 
     //$(".title-hp").text(p.title);

@@ -125,17 +125,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-
 STATIC_URL = '/static/'
-STATIC_ROOT ='/home/taufique/Documents/files/aeron-website-master/static/' #os.path.join(BASE_DIR,'webapp/static') #os.path.join(BASE_DIR,'static/')#/home/taufique/Documents/django/aeron/webapp/static
+STATIC_ROOT ='/home/taufique01/aeron-website/static/' #os.path.join(BASE_DIR,'webapp/static') #os.path.join(BASE_DIR,'static/')#/home/taufique/Documents/django/aeron/webapp/static
 # Additional locations of static files
 STATICFILES_DIRS = (
     # location of your application, should not be public web accessible
-    '/home/taufique/Documents/files/aeron-website-master/webapp/static/',
+    '/home/taufique01/aeron-website/webapp/static/',
 )
 
-MEDIA_ROOT = '/home/taufique/Documents/files/aeron-website-master/media/'#os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = '/home/taufique01/aeron-website/media/'#os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
-
 

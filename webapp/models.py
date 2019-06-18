@@ -9,10 +9,10 @@ class CarPerfumeCatagory(models.Model):
     def __str__(self):
         return self.title
     #description = models.TextField()
-    
-    
+
+
 class CarPerfumeProducts(models.Model):
-    
+
     prefume_catagory = models.ForeignKey('CarPerfumeCatagory', on_delete=models.CASCADE,default=DEFAULT_FOR_ID)
     image = models.ImageField(upload_to='car/products/')
     title = models.CharField(max_length=200,null=False,default='AERON CAR PERFUME')
@@ -20,16 +20,16 @@ class CarPerfumeProducts(models.Model):
     quantity1=models.CharField(max_length=200,null=False,default='85ml')
     quantity2=models.CharField(max_length=200,null=False,default='150ml')
     quantity3=models.CharField(max_length=200,null=False,default='1l')
-    
-    
-    
+
+
+
     head_txt1 = models.CharField(max_length=200,null=False,default='AERON QUALITY PERFUME')
     head_txt2=models.CharField(max_length=200,null=False,default='AERON CAR PERFUME')
     description_txt3 = models.TextField(null=False,default='AERON CAR PERFUME')
     def __str__(self):
         return self.title
-    
-    
+
+
 class LuxuryCarPerfumeCatagory(models.Model):
     #title = models.CharField(max_length=300)
     image = models.ImageField(upload_to='luxurycar/catagory/')#upload_to='blog/%Y/%m/%d'
@@ -37,10 +37,10 @@ class LuxuryCarPerfumeCatagory(models.Model):
     def __str__(self):
         return self.title
     #description = models.TextField()
-    
-    
+
+
 class LuxuryCarPerfumeProducts(models.Model):
-    
+
     prefume_catagory = models.ForeignKey('LuxuryCarPerfumeCatagory', on_delete=models.CASCADE,default=DEFAULT_FOR_ID)
     image = models.ImageField(upload_to='luxurycar/products/')
     title = models.CharField(max_length=200,null=False,default='AERON LUXURY CAR PERFUME')
@@ -48,17 +48,17 @@ class LuxuryCarPerfumeProducts(models.Model):
     quantity1=models.CharField(max_length=200,null=False,default='85ml')
     quantity2=models.CharField(max_length=200,null=False,default='150ml')
     quantity3=models.CharField(max_length=200,null=False,default='1l')
-    
-    
-    
+
+
+
     head_txt1 = models.CharField(max_length=200,null=False,default='AERON QUALITY PERFUME')
     head_txt2=models.CharField(max_length=200,null=False,default='AERON LUXURY CAR PERFUME')
     description_txt3 = models.TextField(null=False,default='AERON LUXURY CAR PERFUME')
     def __str__(self):
         return self.title
-    
-    
-    
+
+
+
 class HomePerfumeCatagory(models.Model):
     #title = models.CharField(max_length=300)
     image = models.ImageField(upload_to='home/catagory/')#upload_to='blog/%Y/%m/%d'
@@ -66,10 +66,10 @@ class HomePerfumeCatagory(models.Model):
     def __str__(self):
         return self.title
     #description = models.TextField()
-    
-    
+
+
 class HomePerfumeProducts(models.Model):
-    
+
     prefume_catagory = models.ForeignKey('HomePerfumeCatagory', on_delete=models.CASCADE,default=DEFAULT_FOR_ID)
     image = models.ImageField(upload_to='home/products/')
     title = models.CharField(max_length=200,null=False,default='AERON HOME PERFUME')
@@ -77,22 +77,22 @@ class HomePerfumeProducts(models.Model):
     quantity1=models.CharField(max_length=200,null=False,default='85ml')
     quantity2=models.CharField(max_length=200,null=False,default='150ml')
     quantity3=models.CharField(max_length=200,null=False,default='1l')
-    
-    
-    
+
+
+
     head_txt1 = models.CharField(max_length=200,null=False,default='AERON QUALITY PERFUME')
     head_txt2=models.CharField(max_length=200,null=False,default='AERON CAR PERFUME')
     description_txt3 = models.TextField(null=False,default='AERON HOME PERFUME')
-    
+
     def __str__(self):
         return self.title
-    
-    
-    
-    
-    
+
+
+
+
+
 class Contact(models.Model):
-    
+
     title = models.CharField(max_length=200,null=False)
     url=models.CharField(max_length=200)
     def __str__(self):
@@ -101,6 +101,7 @@ class Contact(models.Model):
 class Position(models.Model):
      lat = models.CharField(max_length=200,null=False)
      lng = models.CharField(max_length=200,null=False)
+     info=models.CharField(max_length=500,null=True)
 
 
 
