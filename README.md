@@ -6,4 +6,4 @@ It's a beeutifful wesite to showcase your products. I developed it for one of my
 ### Framework: Django
 
 
-## Live demo:https://www.areon-fresh.cz/
+## Live demo:   https://www.areon-fresh.cz/
